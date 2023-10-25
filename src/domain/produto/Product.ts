@@ -1,4 +1,4 @@
-export interface Product {
+export type Product = {
   id:number;
   name: string;
   description: string;
@@ -8,7 +8,10 @@ export interface Product {
   brand: string;
   price_unit: number;
   price_list: number;
-  promotion: {
-    [namePromotion:string]: boolean
-  }
+  promotion: promotion[];
+}
+
+type promotion = {
+  namePromotion: string;
+  discount: number;
 }
